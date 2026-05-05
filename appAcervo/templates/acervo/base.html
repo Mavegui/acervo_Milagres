@@ -1,0 +1,157 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acervo fotográfico digital de Milagres, Ceará. Preservando a história e cultura local.">
+    <title>{% block title %}Acervo Milagres{% endblock %}</title>
+    
+    <link rel="icon" type="image/svg+xml" href="{% static 'acervo/image/favicon.svg' %}">
+
+    <link rel="stylesheet" href="{% static 'acervo/css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+</head>
+<body class="bg-stone-50 text-zinc-900 flex flex-col min-h-screen">
+    
+    <!-- Cabeçalho -->
+    <header role="banner" class="bg-zinc-950 text-white shadow-xl fixed w-full z-50 h-20">    
+        <div class="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">    
+            
+            <div class="flex items-center">
+                <a href="{% url 'index' %}" class="group flex items-center gap-3" aria-label="Acervo Milagres - Início">
+                    <div 
+                    class="w-10 h-10 bg-red-700 flex items-center justify-center rounded-sm rotate-3 group-hover:rotate-0 transition-all" 
+                    aria-hidden="true">
+                        <span class="font-serif text-xl">M</span>    
+                    </div>    
+                    <div>    
+                        <h1 
+                        class="text-lg font-bold leading-none tracking-tight uppercase">
+                            ACERVO <span class="text-red-500">Milagres</span>
+                        </h1>
+                        <p class="text-[10px] text-zinc-400 uppercase tracking-[0.2em] mt-1">Ceará - Brasil</p>    
+                    </div>    
+                </a>    
+            </div>    
+                
+            <nav role="navigation" aria-label="Menu principal">    
+                <button     
+                id="hamburger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+                aria-label="Abrir menu"
+                class="md:hidden p-2 text-zinc-300 hover:text-white relative w-10 h-10">    
+                                
+                    <svg 
+                    id="icon-open" 
+                    class="w-7 h-7 absolute inset-0 m-auto transition-all duration-300" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24" 
+                    aria-hidden="true">    
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>    
+                    
+                    <svg 
+                    id="icon-close" 
+                    class="w-7 h-7 absolute inset-0 m-auto opacity-0 scale-50 transition-all duration-300" 
+                    fill="none"
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24" 
+                    aria-hidden="true">    
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>    
+                    </svg>    
+                </button>    
+    
+                <ul class="hidden md:flex items-center space-x-10 text-sm font-medium uppercase tracking-widest">
+                    <li>
+                        <a 
+                        href="{% url 'index' %}" 
+                        class="hover:text-red-500 px-1 transition-colors">
+                            Início
+                        </a>
+                    </li>
+                    <li>
+                        <a 
+                        href="{% url 'sobre' %}" 
+                        class="hover:text-red-500 px-1 transition-colors">
+                            Sobre
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    
+        <div 
+        id="mobile-menu"
+        class="hidden bg-zinc-900 border-t border-zinc-800 md:hidden transition-all duration-300"
+        aria-label="Navegação móvel">
+            <ul class="flex flex-col p-6 space-y-4 text-center font-semibold">
+                <li>
+                    <a 
+                    href="{% url 'index' %}" 
+                    class="block text-zinc-100 hover:text-red-500 p-2">
+                        Início
+
+                    </a>
+                </li>
+                <li>
+                    <a 
+                    href="{% url 'sobre' %}" 
+                    class="block text-zinc-100 hover:text-red-500 p-2">
+                        Sobre
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main role="main" class="flex-grow pt-32 pb-20">
+        <div class="max-w-7xl mx-auto px-4">
+            {% block header %}{% endblock %}
+            
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer role="contentinfo" class="bg-zinc-950 text-zinc-300 py-16 border-t border-red-900/30">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center md:text-left">
+            
+            <div>
+                <h2 class="font-serif text-white text-xl mb-4 italic">Memória & Identidade</h2>
+                <p class="text-xs leading-relaxed opacity-70">
+                    Iniciativa dedicada à digitalização e preservação do patrimônio visual de Milagres, garantindo que as futuras gerações conheçam suas raízes.
+                </p>
+            </div>
+
+            <div class="flex flex-col items-center">
+                <span class="text-zinc-300 font-serif text-4xl opacity-70">1846</span>
+                <div class="w-12 h-px bg-red-900 my-4"></div>
+                <p class="text-[10px] uppercase tracking-widest text-zinc-300 italic">Orgulho Milagrense</p>
+            </div>
+
+            <div class="md:text-right">
+                <p class="text-sm font-semibold text-zinc-200 mb-1">Projeto de Extensão III - Engenharia de Software</p>
+                <p class="text-xs italic underline decoration-red-900 hover:text-white transition-colors">
+                    <a href="https://github.com/Mavegui" target="_blank">Desenvolvido por Gui F.</a>
+                </p>
+                <div class="mt-6 text-[10px] text-zinc-300">
+                    &copy; 2026 - Milagres, CE
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="{% static 'acervo/js/main.js' %}"></script>
+
+</body>
+</html>

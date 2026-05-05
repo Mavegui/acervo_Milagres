@@ -1,0 +1,11 @@
+{% extends "acervo/base.html" %}
+{% block title %}Página não encontrada | Acervo Milagres{% endblock %}
+{% block content %}
+<div class="max-w-7xl mx-auto px-4 py-20 text-center">
+    <h1 class="text-6xl font-bold text-stone-300 mb-4">404</h1>
+    <p class="text-xl text-stone-600 mb-8">Parece que essa parte da história de Milagres ainda não foi escrita.</p>
+    <a href="{% url 'index' %}" class="px-6 py-3 bg-zinc-900 text-white font-bold uppercase tracking-widest hover:bg-red-800 transition-colors">
+        Voltar ao Acervo
+    </a>
+</div>
+{% endblock %}

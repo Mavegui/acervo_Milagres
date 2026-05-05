@@ -1,0 +1,116 @@
+{% extends 'acervo/base.html' %}
+{% load static %}
+
+{% block title %}Sobre | Acervo Milagres{% endblock %}
+
+{% block content %}
+<article class="max-w-4xl mx-auto">
+    <header class="text-center mb-16">
+        <span class="text-red-600 font-semibold uppercase tracking-widest text-xs">Projeto de Extensão III</span>
+        <h1 class="font-serif text-4xl md:text-5xl text-zinc-900 mt-2 mb-6">Preservando a História de Milagres</h1>
+        <div class="w-24 h-1 bg-red-700 mx-auto"></div>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+        
+        <div class="md:col-span-8 space-y-6 text-zinc-700 leading-relaxed text-lg">
+            <p>
+                O <strong>Acervo Digital de Milagres</strong> nasce da necessidade de catalogar, preservar e democratizar o acesso às memórias visuais do nosso município. Através deste repositório, buscamos salvar registros que contam a evolução urbana, social e cultural da nossa terra.
+            </p>
+            
+            <h2 class="font-serif text-2xl text-zinc-900 pt-4">Nossa Missão</h2>
+            <p>
+                Promover o resgate da identidade milagrense, servindo como uma ferramenta de pesquisa para estudantes, historiadores e para a comunidade em geral. Acreditamos que conhecer o passado é fundamental para construir o futuro.
+            </p>
+
+            <blockquote class="border-l-4 border-red-700 pl-6 py-2 italic text-zinc-500 bg-stone-100/50">
+                "Um povo sem memória é um povo sem história. E um povo sem história está fadado a cometer, no presente e no futuro, os mesmos erros do passado."
+            </blockquote>
+        </div>
+
+        <aside class="md:col-span-4 space-y-8">
+            <div class="bg-white p-6 rounded-sm shadow-sm border border-stone-200">
+                <h3 class="font-bold text-zinc-900 mb-4 border-b pb-2">Detalhes do Projeto</h3>
+                <ul class="space-y-3 text-sm">
+                    <li>
+                        <span class="text-zinc-600 block uppercase text-[10px] tracking-wider">
+                            Universidade
+                        </span> 
+                        Pitágoras Unopar Anhanguera
+                    </li>
+                    <li>
+                        <span class="text-zinc-600 block uppercase text-[10px] tracking-wider">
+                            Disciplina
+                        </span> 
+                        Projeto de Extensão III
+                    </li>
+                    <li>
+                        <span class="text-zinc-600 block uppercase text-[10px] tracking-wider">
+                            Localidade
+                        </span> 
+                        Milagres, Ceará
+                    </li>
+                    <li>
+                        <span class="text-zinc-600 block uppercase text-[10px] tracking-wider">
+                            Tecnologias
+                        </span> 
+                        Django, Supabase & Tailwind
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-zinc-900 text-white p-6 rounded-sm shadow-lg">
+                <h3 class="font-serif text-lg mb-2">Desenvolvimento</h3>
+                <p class="text-zinc-400 text-xs mb-4 leading-relaxed">
+                    Projeto desenvolvido como parte dos requisitos acadêmicos do 6º semestre de Engenharia de Software.
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center border border-zinc-700">
+                        <span class="text-red-400 font-bold">G</span> </div>
+                    <div class="flex flex-col">
+                        <span class="text-sm font-medium">Guilherme Feitosa</span>
+                        <a 
+                            href="https://www.linkedin.com/in/gui77feitosa/" 
+                            target="_blank" 
+                            class="text-[10px] text-red-500 hover:underline">
+                            Ver Perfil Profissional
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <section class="mt-20 py-12 border-t border-stone-200">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8 opacity-80 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-700">   
+            <div class="text-center md:text-left">
+                <h4 class="font-serif text-xl text-stone-800">Milagres, Ceará</h4>
+                <p class="text-xs uppercase tracking-widest text-stone-500 font-medium">Terra de fé e trabalho</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <svg 
+                class="w-12 h-12 text-stone-400" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+                role="none"> 
+                    <path 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    stroke-width="1" 
+                    d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7">
+                    </path>
+                </svg>
+                <div class="text-left border-l border-stone-200 pl-4">
+                    <h4 class="font-serif text-stone-800 text-lg leading-none">Milagres</h4>
+                    <p class="text-[10px] uppercase tracking-[0.2em] mt-1 text-stone-600 font-semibold">
+                        Cariri Oriental
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</article>
+{% endblock %}

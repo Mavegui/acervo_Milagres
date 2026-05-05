@@ -1,0 +1,34 @@
+/* Suavidade geral */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Ajuste para imagens do acervo no index */
+.img-card-focus {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.img-card-focus:hover {
+    transform: scale(1.03);
+}
+
+/* Garante que o conteúdo não 'pule' ao abrir o menu mobile */
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.font-serif { 
+    font-family: 'Playfair Display', serif; 
+}
+
+/* Animação simples para o menu mobile */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+}

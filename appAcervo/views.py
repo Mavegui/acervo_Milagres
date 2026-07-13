@@ -1,8 +1,9 @@
-from django.core.paginator import Paginator
 from django.contrib import messages
-from django.shortcuts import redirect
-from django.shortcuts import render
+from django.core.paginator import Paginator
+from django.shortcuts import redirect, render
+
 from .models import Foto
+
 
 def index(request):
     categoria_select = request.GET.get('categoria')
@@ -31,4 +32,4 @@ def index(request):
     return render(request, 'acervo/index.html', context)
 
 def sobre(request):
-    return render(request, 'acervo/sobre.html')
+    return render(request, 'acervo/sobre.html') 

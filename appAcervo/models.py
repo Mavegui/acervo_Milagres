@@ -1,11 +1,12 @@
 from django.db import models
 from django.utils.text import slugify
 
+
 def renomear_arquivo(instance, filename):
     extensao = filename.split('.')[-1]
     novo_nome = f"{slugify(instance.titulo)}.{extensao}"
     return novo_nome
-          
+           
 class Foto(models.Model):
     
     id = models.AutoField(primary_key=True)

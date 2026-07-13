@@ -7,7 +7,7 @@ from .models import Foto
 
 def index(request):
     categoria_select = request.GET.get('categoria')
-    
+
     categorias_validas = {valor for valor, _ in Foto.CATEGORIAS_CHOICES}
     if categoria_select and categoria_select not in categorias_validas:
         messages.error(request, "A categoria selecionada não existe.")
@@ -16,7 +16,7 @@ def index(request):
     fotos_list = Foto.objects.all()
     if categoria_select:
         fotos_list = fotos_list.filter(categoria=categoria_select)
-    
+
     fotos_list = fotos_list.order_by('-id')
 
     paginator = Paginator(fotos_list,8)

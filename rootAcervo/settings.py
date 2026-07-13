@@ -19,7 +19,7 @@ ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 # Sempre ativo
 X_FRAME_OPTIONS = 'DENY'
 SECURE_REFERRER_POLICY = 'strict-origin-when-cross-origin'
-SECURE_BROWSER_XSS_FILTER = True    
+SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 
 # Cookies modernos (Padrão recomendado)
@@ -32,7 +32,7 @@ if not DEBUG:
     SECURE_HSTS_SECONDS = env.int('SECURE_HSTS_SECONDS', default=31536000)
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
-    
+
     # Cookies só via HTTPS
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
@@ -105,7 +105,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
-    }, 
+    },
 ]
 
 WSGI_APPLICATION = 'rootAcervo.wsgi.application'

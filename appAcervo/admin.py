@@ -6,7 +6,7 @@ from .models import Foto
 
 @admin.register(Foto)
 class FotoAdmin(admin.ModelAdmin):
-    
+
     list_display = ('id', 'exibir_miniatura', 'titulo', 'categoria', 'created_at', 'updated_at')
     readonly_fields = ('visualizar_foto_grande',)
 
@@ -14,7 +14,7 @@ class FotoAdmin(admin.ModelAdmin):
         if obj.imagem:
             return mark_safe(f'<img src="{obj.imagem.url}" width="50" style="border-radius: 5px;" />')
         return "Sem imagem"
-     
+
     exibir_miniatura.short_description = 'Miniatura'
 
     def visualizar_foto_grande(self, obj):

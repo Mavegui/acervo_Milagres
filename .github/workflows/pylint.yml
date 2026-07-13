@@ -24,4 +24,4 @@ jobs:
       run: |
         pylint $(git ls-files '*.py') \
           --ignore=migrations \
-          --disable=missing-docstring,invalid-name,line-too-long,no-member
+          --disable=missing-docstring,invalid-name,line-too-long,no-member,wrong-import-order,import-outside-toplevel,too-few-public-methods

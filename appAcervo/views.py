@@ -32,4 +32,4 @@ def index(request):
     return render(request, 'acervo/index.html', context)
 
 def sobre(request):
-    return render(request, 'acervo/sobre.html') 
+    return render(request, 'acervo/sobre.html')

@@ -5,4 +5,3 @@ urlpatterns = [
     path('chefinhoadmin/', admin.site.urls),
     path('', include('appAcervo.urls')),
 ]
- 
